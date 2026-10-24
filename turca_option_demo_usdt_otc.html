@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050d1b">
+<title>Turca Option — Plataforma Demo</title>
+<style>
+:root{--bg:#050d1b;--panel:#09182b;--panel2:#0d2340;--line:#17456f;--blue:#00a8ff;--cyan:#4dd9ff;--white:#eef7ff;--muted:#9bb2cc;--green:#00d18a;--red:#ff4058}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 20% 0,#102c50 0,transparent 40%),var(--bg);color:var(--white);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}button,select,input{font:inherit}button{cursor:pointer}.wrap{max-width:1400px;margin:auto;padding:16px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}.brand{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:900;letter-spacing:.5px}.logo{width:48px;height:48px;display:grid;place-items:center;background:linear-gradient(145deg,#00c4ff,#0752cb);color:#00162a;border-radius:14px;font-size:27px}.brand span{color:var(--blue)}.subtitle{font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:600}.demo{border:1px solid #0876b7;border-radius:12px;padding:10px 14px;background:#07172a;color:var(--muted);font-size:12px}.demo strong{display:block;color:var(--cyan);font-size:19px}.layout{display:grid;grid-template-columns:170px minmax(0,1fr) 240px;gap:12px}.panel{background:linear-gradient(145deg,rgba(12,32,55,.98),rgba(5,16,30,.98));border:1px solid var(--line);border-radius:13px;overflow:hidden}.side{padding:10px}.nav{display:block;width:100%;text-align:left;color:var(--muted);background:transparent;border:0;border-radius:8px;padding:12px;margin-bottom:5px}.nav.active,.nav:hover{background:#102e4e;color:var(--cyan)}.sideNote{font-size:11px;color:var(--muted);padding:12px 7px}.main{padding:14px;min-width:0}.row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.muted{color:var(--muted)}.small{font-size:12px}.pill{border:1px solid var(--line);border-radius:8px;padding:7px 9px;color:var(--muted);font-size:12px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 10px}.tab{border:1px solid var(--line);background:#07182a;color:var(--muted);border-radius:8px;padding:9px 13px}.tab.active{background:#073b65;border-color:var(--blue);color:#fff}.pairgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:12px}.pair{background:#07172a;color:var(--white);border:1px solid #183958;border-radius:8px;padding:9px 8px;text-align:left;min-width:0}.pair strong{display:block;font-size:12px;overflow:hidden;text-overflow:ellipsis}.pair small{color:var(--muted);font-size:10px}.pair.active{border-color:var(--cyan);background:#0a2b49;box-shadow:inset 0 0 0 1px #00a8ff}.chart{display:block;width:100%;height:300px;background:#061426;border:1px solid #17466e;border-radius:9px}.chartFoot{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 2px;color:var(--muted);font-size:11px}.tables{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.tablebox{padding:12px}.tablebox h3{font-size:13px;margin:0 0 9px}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:11px;white-space:nowrap}th,td{text-align:left;padding:8px 6px;border-bottom:1px solid #15314c}th{color:var(--muted);font-weight:600}.positive{color:var(--green)}.negative{color:var(--red)}.trade{padding:15px}.trade .label{display:block;color:var(--muted);font-size:12px;margin:12px 0 5px}.trade input,.trade select{width:100%;background:#06172a;color:#fff;border:1px solid var(--line);border-radius:8px;padding:11px}.big{font-size:23px;font-weight:850;color:var(--cyan);margin:4px 0}.return{font-size:21px;color:var(--green);font-weight:850}.btn{width:100%;border:0;border-radius:9px;padding:13px;font-weight:850;margin-top:10px}.up{background:var(--green);color:#001a14}.down{background:var(--red);color:#fff}.notice{margin:13px 0;padding:12px 14px;border:1px solid #17466e;background:#081a2d;border-radius:11px;color:#c5d9ec;font-size:12px}.foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:11px;padding:12px 2px}.hidden{display:none}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.side{display:flex;gap:4px;overflow:auto}.nav{min-width:max-content;width:auto;margin:0}.sideNote{display:none}.tables{grid-template-columns:1fr}.pairgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.chart{height:260px}}
+@media(max-width:500px){.wrap{padding:9px}.brand{font-size:20px}.logo{width:40px;height:40px}.demo{padding:8px}.demo strong{font-size:15px}.main{padding:10px}.pairgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.chart{height:220px}.trade{padding:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo">♉</div><div>TURCA <span>OPTION</span><div class="subtitle">TREINE • APRENDA • EVOLUA</div></div></div>
+ <div class="demo">CONTA DE DEMONSTRAÇÃO<strong id="balanceTop">R$ 10.000,00</strong></div>
+</header>
+<div class="layout">
+ <aside class="panel side">
+  <button class="nav active" data-view="Mercado demonstrativo">⌂ &nbsp; Início</button>
+  <button class="nav" data-view="Pares de negociação">↗ &nbsp; Negociar</button>
+  <button class="nav" data-view="Carteira fictícia">▣ &nbsp; Carteira demo</button>
+  <button class="nav" data-view="Histórico de operações">◷ &nbsp; Histórico</button>
+  <button class="nav" data-view="Sobre a Turca Option">ⓘ &nbsp; Sobre</button>
+  <div class="sideNote">Protótipo educativo.<br>Não conecta a corretoras.</div>
+ </aside>
+ <main class="panel main">
+  <div class="row"><div><strong id="pageTitle">Mercado demonstrativo</strong><div class="muted small">Pares e cotações gerados para demonstração — não são preços reais</div></div><div class="pill">● SALDO FICTÍCIO</div></div>
+  <div class="tabs"><button class="tab active" data-group="crypto">Cripto / USDT</button><button class="tab" data-group="otc">Pares OTC</button></div>
+  <div class="pairgrid" id="pairGrid"></div>
+  <div class="row"><div><strong id="selectedPair">BTC/USDT</strong> <span class="muted small" id="marketLabel">· Cripto simulado</span></div><div class="row"><span class="pill" id="price">Preço demo: 67.420,50</span><span class="pill">Retorno demo: 87%</span></div></div>
+  <canvas class="chart" id="chart" aria-label="Gráfico de preços simulado"></canvas>
+  <div class="chartFoot"><span>● Dados simulados localmente</span><span>Gráfico ilustrativo; não use para decisões financeiras.</span></div>
+  <div class="tables">
+   <section class="panel tablebox"><h3>Operações recentes (simulação)</h3><div class="scroll"><table><thead><tr><th>Par</th><th>Direção</th><th>Valor</th><th>Resultado</th></tr></thead><tbody id="history"><tr><td>BTC/USDT</td><td class="positive">▲ Alta</td><td>R$ 50,00</td><td class="muted">Exemplo</td></tr></tbody></table></div></section>
+   <section class="panel tablebox"><h3>Como testar</h3><p class="muted small">Escolha uma paridade, informe um valor fictício e teste Alta ou Baixa. O resultado é aleatório e serve apenas para demonstrar a interface.</p><p class="muted small">USDT é o símbolo de uma stablecoin; neste protótipo, os pares são apenas nomes ilustrativos, sem cotação real ou conversão para criptomoedas.</p></section>
+  </div>
+ </main>
+ <aside class="panel trade">
+  <div class="muted small">Saldo fictício disponível</div><div class="big" id="balanceSide">R$ 10.000,00</div>
+  <div class="label">Par selecionado</div><div class="pill" id="tradePair">BTC/USDT</div>
+  <label class="label" for="amount">Valor da operação demo (R$)</label><input id="amount" type="number" min="1" max="10000" value="50" step="1">
+  <label class="label" for="expiry">Prazo ilustrativo</label><select id="expiry"><option>30 segundos</option><option selected>1 minuto</option><option>5 minutos</option><option>15 minutos</option></select>
+  <div class="label">Retorno potencial ilustrativo</div><div class="return" id="potential">R$ 93,50</div>
+  <button class="btn up" id="up">↑ &nbsp; ACIMA / ALTA</button><button class="btn down" id="down">↓ &nbsp; ABAIXO / BAIXA</button>
+  <p class="muted small">Nenhuma ordem é enviada a uma corretora. Não há depósitos, saques nem pagamentos.</p>
+ </aside>
+</div>
+<div class="notice"><strong>AVISO IMPORTANTE:</strong> Turca Option é uma demonstração educativa. Todos os pares, gráficos, retornos e resultados são fictícios; não há dados de mercado, negociação real, conexão com carteira cripto, Pix ou movimentação de dinheiro. O saldo existe somente nesta página e reinicia ao recarregar.</div>
+<footer class="foot"><span>© <span id="year"></span> Turca Option · Demo</span><span>Visual responsivo para celular e computador</span></footer>
+</div>
+<script>
+const cryptoPairs=[
+ ['BTC/USDT','Bitcoin / Tether'],['ETH/USDT','Ethereum / Tether'],['BNB/USDT','BNB / Tether'],['SOL/USDT','Solana / Tether'],
+ ['XRP/USDT','XRP / Tether'],['ADA/USDT','Cardano / Tether'],['DOGE/USDT','Dogecoin / Tether'],['TRX/USDT','TRON / Tether'],
+ ['LTC/USDT','Litecoin / Tether'],['LINK/USDT','Chainlink / Tether'],['AVAX/USDT','Avalanche / Tether'],['TON/USDT','Toncoin / Tether'],
+ ['DOT/USDT','Polkadot / Tether'],['BCH/USDT','Bitcoin Cash / Tether'],['SHIB/USDT','Shiba Inu / Tether'],['NEAR/USDT','NEAR / Tether']
+];
+const otcPairs=[
+ ['EUR/USD OTC','Euro / Dólar'],['GBP/USD OTC','Libra / Dólar'],['USD/JPY OTC','Dólar / Iene'],['AUD/USD OTC','Dólar australiano / Dólar'],
+ ['USD/CAD OTC','Dólar / Dólar canadense'],['EUR/GBP OTC','Euro / Libra'],['EUR/JPY OTC','Euro / Iene'],['GBP/JPY OTC','Libra / Iene'],
+ ['USD/CHF OTC','Dólar / Franco suíço'],['NZD/USD OTC','Dólar neozelandês / Dólar'],['EUR/CHF OTC','Euro / Franco suíço'],['GBP/CHF OTC','Libra / Franco suíço'],
+ ['AUD/JPY OTC','Dólar australiano / Iene'],['CAD/JPY OTC','Dólar canadense / Iene'],['CHF/JPY OTC','Franco suíço / Iene'],['EUR/AUD OTC','Euro / Dólar australiano']
+];
+let group='crypto', selected='BTC/USDT', balance=10000, chartSeed=12;
+const fmt=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function pairList(){return group==='crypto'?cryptoPairs:otcPairs}
+function renderPairs(){
+ const grid=document.getElementById('pairGrid');grid.innerHTML='';
+ pairList().forEach(([pair,desc])=>{const b=document.createElement('button');b.className='pair'+(selected===pair?' active':'');b.innerHTML='<strong>'+pair+'</strong><small>'+desc+'</small>';b.onclick=()=>{selected=pair;document.getElementById('selectedPair').textContent=pair;document.getElementById('tradePair').textContent=pair;document.getElementById('marketLabel').textContent=group==='crypto'?'· Cripto simulado':'· OTC simulado';renderPairs();drawChart()};grid.appendChild(b)});
+ document.getElementById('selectedPair').textContent=selected;document.getElementById('tradePair').textContent=selected;
+ document.getElementById('marketLabel').textContent=group==='crypto'?'· Cripto simulado':'· OTC simulado';
+ document.getElementById('price').textContent='Preço demo: '+(group==='crypto'?'67.420,50':'1,08420');
+}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{group=b.dataset.group;document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t===b));selected=group==='crypto'?'BTC/USDT':'EUR/USD OTC';renderPairs();drawChart()}));
+function update(){document.getElementById('balanceTop').textContent=fmt(balance);document.getElementById('balanceSide').textContent=fmt(balance);document.getElementById('potential').textContent=fmt(Math.max(0,Number(document.getElementById('amount').value)||0)*1.87)}
+document.getElementById('amount').addEventListener('input',update);
+function trade(direction){
+ const value=Number(document.getElementById('amount').value);
+ if(!Number.isFinite(value)||value<=0){alert('Digite um valor fictício válido.');return}
+ if(value>balance){alert('Saldo demo insuficiente. Diminua o valor.');return}
+ balance-=value;const win=Math.random()>=.5;const result=win?value*.87:-value;
+ if(win)balance+=value+result;
+ const tr=document.createElement('tr');
+ const cells=[selected,direction==='ALTA'?'▲ Alta':'▼ Baixa',fmt(value),(win?'+':'')+fmt(result)];
+ cells.forEach((v,i)=>{const td=document.createElement('td');td.textContent=v;if(i===1||i===3)td.className=win?'positive':'negative';tr.appendChild(td)});
+ document.getElementById('history').prepend(tr);update()
+}
+document.getElementById('up').onclick=()=>trade('ALTA');document.getElementById('down').onclick=()=>trade('BAIXA');
+document.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n===b));document.getElementById('pageTitle').textContent=b.dataset.view;if(b.dataset.view==='Carteira fictícia')alert('Saldo fictício: '+fmt(balance)+'. Não há carteira real.');if(b.dataset.view==='Sobre a Turca Option')alert('Protótipo educativo, sem operações ou pagamentos reais.')}))
+function drawChart(){
+ const c=document.getElementById('chart'),ctx=c.getContext('2d'),dpr=window.devicePixelRatio||1,w=c.clientWidth,h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;ctx.scale(dpr,dpr);ctx.clearRect(0,0,w,h);
+ ctx.strokeStyle='#153653';ctx.lineWidth=1;for(let i=1;i<6;i++){let y=h*i/6;ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}for(let i=1;i<9;i++){let x=w*i/9;ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke()}
+ let price=h*.52;for(let i=0;i<Math.max(25,Math.floor(w/10));i++){const x=7+i*(w-15)/Math.max(25,Math.floor(w/10));const next=Math.max(18,Math.min(h-18,price+(Math.random()-.52)*h*.15));ctx.strokeStyle=next<price?'#00d18a':'#ff4058';ctx.fillStyle=ctx.strokeStyle;ctx.beginPath();ctx.moveTo(x+3,Math.min(price,next)-7);ctx.lineTo(x+3,Math.max(price,next)+7);ctx.stroke();ctx.fillRect(x,Math.min(price,next),6,Math.max(3,Math.abs(next-price)));price=next}
+ ctx.fillStyle='#9bb2cc';ctx.font='10px system-ui';ctx.fillText('GRÁFICO FICTÍCIO · '+selected,10,15)
+}
+window.addEventListener('resize',drawChart);document.getElementById('year').textContent=new Date().getFullYear();renderPairs();update();drawChart();
+</script>
+</body></html>
